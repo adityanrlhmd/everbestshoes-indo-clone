@@ -1,3 +1,5 @@
+import type { RouteRecordRaw, RouterOptions } from "vue-router"
+
 export interface NavHeader {
   name: string
   link: string
@@ -7,15 +9,15 @@ export interface NavHeader {
 export const dataNavHeader: NavHeader[] = [
   {
     name: 'Women',
-    link: '/women',
+    link: '/products/category/women',
     children: [
       {
         name: 'All',
-        link: '/women/all',
+        link: '/products/category/women-all',
         children: [
           {
             name: 'New Arrival',
-            link: '/women/all/new-arrival'
+            link: '/products/category/women-all-new-arrival'
           }
         ]
       }
@@ -23,15 +25,15 @@ export const dataNavHeader: NavHeader[] = [
   },
   {
     name: 'Men',
-    link: '/men',
+    link: '/products/category/men',
     children: [
       {
         name: 'All',
-        link: '/men/all',
+        link: '/products/category/men-all',
         children: [
           {
             name: 'New Arrival',
-            link: '/men/all/new-arrival'
+            link: '/products/category/men-all-new-arrival'
           }
         ]
       }

@@ -23,3 +23,15 @@ body {
 #app {
   @apply min-h-screen flex flex-col;
 }
+
+.heading {
+  @apply text-2xl font-bold lg:text-3xl text-quinary text-center;
+}
+
+.bullet-swiper {
+  @apply bg-transparent rounded-full border border-black mx-3 inline-block w-2 h-2 lg:w-3 lg:h-3;
+}
+
+.bullet-swiper-active {
+  @apply bg-black;
+}

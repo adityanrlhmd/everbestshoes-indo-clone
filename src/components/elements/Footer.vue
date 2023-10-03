@@ -2,7 +2,7 @@
   <footer>
     <section class="bg-[#273632] text-white">
       <div class="container flex items-start justify-between p-5 mx-auto">
-        <ul v-for="(navFooter, index) in dataNavFooter" :key="index" class="space-y-4 list-none grow basis-1">
+        <ul v-for="(navFooter, index) in dataNavFooter" :key="index" class="hidden space-y-4 list-none grow basis-1 lg:block">
           <li
             v-for="(navs, index) in navFooter.navigations"
             :key="index"
@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { dataNavFooter } from '@/libs/data/navFooter'
+import { dataNavFooter } from '@/lib/data/nav-footer'
 </script>
 
 <style scoped lang="postcss">
