@@ -1,4 +1,4 @@
-import type { ImageType } from "../../types/image";
+import type { ImageType } from "../types/image";
 
 export interface BannerHomeInterface {
   image: ImageType;

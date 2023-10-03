@@ -36,7 +36,7 @@
 
 <script setup lang="ts">
 import Button from '@/components/ui/button/Button.vue'
-import type { SubBannerHomeInterface } from '@/lib/interfaces/home/banner-home'
+import type { SubBannerHomeInterface } from '@/lib/interfaces/banner-home'
 
 const articleSubBanner: SubBannerHomeInterface[] = [
   {

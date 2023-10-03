@@ -45,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import type { BannerHomeInterface } from '@/lib/interfaces/home/banner-home'
+import type { BannerHomeInterface } from '@/lib/interfaces/banner-home'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import { Button } from '@/components/ui/button'
 
