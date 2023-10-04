@@ -10,9 +10,11 @@
         )
       "
     >
-      {{ buttonText }}
-      <ChevronUp v-if="isOpen" class="w-6 h-6 text-quaternary" />
-      <ChevronDown v-else class="w-6 h-6 text-quaternary" />
+      <slot name="buttonText">
+        {{ buttonText }}
+      </slot>
+      <ChevronUp v-if="isOpen" class="w-6 h-6 text-primary" />
+      <ChevronDown v-else class="w-6 h-6 text-primary" />
     </button>
 
     <div v-if="isOpen" class="absolute left-0 z-30 w-full bg-white shadow" ref="dropdown">
@@ -22,12 +24,12 @@
 </template>
 
 <script setup lang="ts">
-import { cn } from '@/lib/utils';
-import { ChevronDown, ChevronUp } from 'lucide-vue-next';
-import { onMounted, onUnmounted, ref } from 'vue';
+import { cn } from '@/lib/utils'
+import { ChevronDown, ChevronUp } from 'lucide-vue-next'
+import { onMounted, onUnmounted, ref } from 'vue'
 
 const isOpen = ref(false)
-const dropdownRef = ref();
+const dropdownRef = ref()
 
 const toggleDropdown = () => {
   isOpen.value = !isOpen.value

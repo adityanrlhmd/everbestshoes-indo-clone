@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex-col hidden gap-8 px-5 pt-5 pb-2 mx-auto lg:flex">
+  <div class="container flex-col hidden gap-5 pt-5 pb-2 mx-auto lg:flex">
     <div class="grid grid-cols-3 text-xs font-semibold uppercase">
       <span>
         <RouterLink to="/login"> Sign in </RouterLink>
@@ -29,7 +29,7 @@
         <ul class="flex list-none">
           <li v-for="navRoot in dataNavHeader" :key="navRoot.link" class="dropdown-nav">
             <RouterLink :to="navRoot.link">
-              <span class="font-bold uppercase pr-[30px] hover:text-quaternary transition-all">
+              <span class="font-bold uppercase pr-[30px] hover:text-primary transition-all">
                 {{ navRoot.name }}
               </span>
             </RouterLink>
@@ -42,7 +42,7 @@
                   class="space-y-4 text-xs uppercase"
                 >
                   <RouterLink :to="navFirstChild.link">
-                    <span class="font-semibold border-b border-quaternary text-[#273632] pr-2 pb-1">
+                    <span class="pb-1 pr-2 font-semibold border-b border-primary text-quinary">
                       {{ navFirstChild.name }}
                     </span>
                   </RouterLink>
@@ -62,13 +62,39 @@
           </li>
         </ul>
       </nav>
+
+      <div v-if="!showSearch" @click="onOpenSearch" class="flex items-center gap-1 text-sm">
+        <Search :size="18" :stroke-width="2" />
+
+        <span class="font-semibold uppercase">search</span>
+      </div>
+
+      <InputSearch v-if="showSearch" :on-hide-search="onCloseSearch" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import InputSearch from '../InputSearch.vue'
 import { dataNavHeader } from '@/lib/data/nav-header'
+import { X } from 'lucide-vue-next'
+import { Search } from 'lucide-vue-next'
+import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
+
+const showSearch = ref<boolean>(false)
+
+const onOpenSearch = (event: MouseEvent) => {
+  event.stopPropagation()
+
+  if (!showSearch.value) {
+    showSearch.value = true
+  }
+}
+
+const onCloseSearch = (event: MouseEvent) => {
+  showSearch.value = false
+}
 </script>
 
 <style scoped lang="postcss">

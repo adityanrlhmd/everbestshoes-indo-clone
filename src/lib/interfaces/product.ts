@@ -5,17 +5,26 @@ export interface ProductInterface {
   name: string
   price: number
   slug: string
-  image: ImageType
+  banner: ImageType
+  gallery: ImageType[]
   discountPercent?: number
+  colors: ColorProductInterface[]
+  sizes: number[]
+  description: string
+  productDetails?: {
+    name: string
+    value: string
+  }[]
+  material?: {
+    name: string
+    value: string
+  }[]
+  shipping?: string
 }
 
 export interface ColorProductInterface {
   name: string
   codeHex: string
-}
-
-export interface SizeProductInterface {
-  number: number
 }
 
 export interface SortByProductInterface {

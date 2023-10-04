@@ -4,7 +4,7 @@ import ProductList from '@/components/layout/product/list/ProductList.vue'
 </script>
 
 <template>
-  <main class="container p-5 mx-auto">
+  <main class="container py-5 mx-auto">
     <FilterProduct />
     <ProductList />
   </main>

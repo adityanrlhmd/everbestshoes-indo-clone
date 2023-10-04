@@ -17,11 +17,16 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#638043',
+        primary: '#E64B38',
+        'primary-foreground': '#ffffff',
         secondary: '#FAECE0',
         tertiary: '#F8DD37',
-        quaternary: '#E64B38',
-        quinary: '#273632'
+        quaternary: '#638043',
+        quinary: '#273632',
+        muted: '#f3f4f6',
+        'muted-foreground': '#6b7280',
+        accent: '#f3f4f6',
+        'accent-foreground': '#111827'
       },
       keyframes: {
         'accordion-down': {

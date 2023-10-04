@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import CustomDropdown from '@/components/elements/CustomDropdown.vue'
+import CustomDropdown from '@/components/elements/CustomDropdown/CustomDropdown.vue'
 import type { ViewByProductInterface } from '@/lib/interfaces/product'
 
 const dummyView: ViewByProductInterface[] = [

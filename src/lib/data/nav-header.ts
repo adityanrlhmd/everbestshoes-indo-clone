@@ -1,4 +1,3 @@
-import type { RouteRecordRaw, RouterOptions } from "vue-router"
 
 export interface NavHeader {
   name: string

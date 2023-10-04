@@ -16,8 +16,28 @@ const router = createRouter({
         {
           path: 'category/:category',
           component: () => import('../views/ProductsView/ProductsView.vue')
-        }
+        },
+        {
+          path: ':slug',
+          component: () => import('../views/ProductsView/DetailProductsView.vue')
+        },
       ]
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/AuthView/LoginView.vue')
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/AuthView/RegisterView.vue')
     },
     {
       path: '/about',
@@ -26,7 +46,7 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
-    }
+    },
   ]
 })
 

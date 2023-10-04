@@ -35,3 +35,7 @@ body {
 .bullet-swiper-active {
   @apply bg-black;
 }
+
+.container {
+  @apply px-5
+}
