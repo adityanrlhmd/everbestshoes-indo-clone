@@ -13,22 +13,7 @@
       <FormInput label="Mobile: *" name="mobile" required />
       <FormInput type="email" label="Email: *" name="email" required />
 
-      <SelectInput
-        v-model="selectedProvince"
-        label="Province: *"
-        name="province"
-        :options="provinces"
-        required
-      />
-
-      <SelectInput
-        v-model="selectedRegency"
-        label="Regency: *"
-        name="regency"
-        :options="regencies"
-        required
-        :disabled="!selectedProvince"
-      />
+      <SelectRegional required />
 
       <SelectInput
         label="I Am Celebrating: *"
@@ -75,18 +60,12 @@
 
 <script setup lang="ts">
 import CheckboxInput from '@/components/elements/CheckboxInput.vue'
-import SelectInput from '@/components/elements/SelectInput.vue'
 import DatePicker from '@/components/elements/DatePicker.vue'
 import FormInput from '@/components/elements/FormInput.vue'
-import { RouterLink } from 'vue-router'
+import SelectInput from '@/components/elements/SelectInput.vue'
+import SelectRegional from '@/components/elements/SelectRegional.vue'
 import { Button } from '@/components/ui/button'
-import { onMounted, ref, watch } from 'vue'
-
-const selectedProvince = ref('')
-const selectedRegency = ref('')
-
-const provinces = ref([])
-const regencies = ref([])
+import { RouterLink } from 'vue-router'
 
 const genderOption = [
   {
@@ -136,42 +115,6 @@ const maritalStatusOption = [
     value: 'waisak'
   }
 ]
-
-const getProvinces = async () => {
-  try {
-    const response = await fetch(`${import.meta.env.VITE_API_REGION_IDN_URL}/provinces.json`)
-    const data = await response.json()
-    provinces.value = data.map((province: any) => ({
-      value: province.id,
-      label: province.name
-    }))
-  } catch (error) {
-    console.error(error)
-  }
-}
-
-const getRegencies = async () => {
-  try {
-    const response = await fetch(
-      `${import.meta.env.VITE_API_REGION_IDN_URL}/regencies/${selectedProvince.value}.json`
-    )
-    const data = await response.json()
-    regencies.value = data.map((city: any) => ({
-      value: city.id,
-      label: city.name
-    }))
-  } catch (error) {
-    console.error(error)
-  }
-}
-
-onMounted(() => {
-  getProvinces()
-})
-
-watch(selectedProvince, () => {
-  getRegencies()
-})
 
 const onSubmitRegister = (e: Event) => {
   e.preventDefault()
