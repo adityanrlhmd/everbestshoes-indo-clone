@@ -3,8 +3,8 @@
     <h1 class="text-4xl font-bold uppercase">Login</h1>
 
     <form @submit="onSubmitLogin" class="flex flex-col max-w-xl gap-8">
-      <FormInput label-class="font-bold" label="Email Address/Card No:" required />
-      <FormInput label-class="font-bold" label="Password:" type="password" required />
+      <FormInput type="email" label-class="font-bold" label="Email Address/Card No:" required />
+      <FormInput type="password" label-class="font-bold" label="Password:" required />
 
       <Button type="submit" class="bg-black" size="sm"> Login </Button>
     </form>
@@ -17,7 +17,7 @@
 
       <span>
         Forgot your password?
-        <RouterLink to="/register" class="text-[#337ab7]"> Click here </RouterLink>
+        <RouterLink to="/resetPassword" class="text-[#337ab7]"> Click here </RouterLink>
       </span>
     </div>
   </main>

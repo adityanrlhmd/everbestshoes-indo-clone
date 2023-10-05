@@ -4,7 +4,7 @@
       <X :size="18" :stroke-width="2" />
     </button>
 
-    <input type="text" class="w-full" />
+    <input type="search" class="w-full" />
 
     <Search :size="18" :stroke-width="2" />
   </div>

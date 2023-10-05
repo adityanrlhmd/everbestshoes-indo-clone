@@ -75,18 +75,26 @@
               <ul class="text-xs font-semibold uppercase list-none">
                 <li class="px-5 py-3">
                   <span>
-                    <RouterLink to="/login"> Sign in </RouterLink>
+                    <SheetClose asChild>
+                      <RouterLink to="/login"> Sign in </RouterLink>
+                    </SheetClose>
                     <span>/</span>
-                    <RouterLink to="/register"> Register </RouterLink>
+                    <SheetClose asChild>
+                      <RouterLink to="/register"> Register </RouterLink>
+                    </SheetClose>
                   </span>
                 </li>
 
                 <li class="px-5 py-3">
-                  <RouterLink to="/wishlist"> Wishlist </RouterLink>
+                  <SheetClose asChild>
+                    <RouterLink to="/wishlist"> Wishlist </RouterLink>
+                  </SheetClose>
                 </li>
 
                 <li class="px-5 py-3">
-                  <RouterLink to="/cart"> Cart </RouterLink>
+                  <SheetClose asChild>
+                    <RouterLink to="/cart"> Cart </RouterLink>
+                  </SheetClose>
                 </li>
               </ul>
             </section>
@@ -110,13 +118,13 @@
         </li>
 
         <li>
-          <RouterLink to="#">
+          <RouterLink to="/wishlist">
             <Heart :size="19" :stroke-width="1" />
           </RouterLink>
         </li>
 
         <li>
-          <RouterLink to="#">
+          <RouterLink to="/cart">
             <ShoppingBag :size="19" :stroke-width="1" />
           </RouterLink>
         </li>

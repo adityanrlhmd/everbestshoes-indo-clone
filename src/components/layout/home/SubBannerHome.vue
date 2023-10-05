@@ -7,10 +7,8 @@
         Unbound your style with our latest selection of bags and shoes
       </p>
 
-      <Button>
-        <RouterLink to="/women">
-          SHOP NOW
-        </RouterLink>
+      <Button variant="primary">
+        <RouterLink to="/women"> SHOP NOW </RouterLink>
       </Button>
     </div>
 
@@ -35,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import Button from '@/components/ui/button/Button.vue'
+import { Button } from '@/components/ui/button'
 import type { SubBannerHomeInterface } from '@/lib/interfaces/banner-home'
 
 const articleSubBanner: SubBannerHomeInterface[] = [

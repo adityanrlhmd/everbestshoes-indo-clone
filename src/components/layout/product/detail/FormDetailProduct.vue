@@ -52,7 +52,7 @@
       <div class="flex flex-col gap-5">
         <div class="flex flex-col gap-3">
           <Button variant="outline-primary" class="md:w-full"> find yout fit </Button>
-          <Button class="md:w-full"> add to cart </Button>
+          <Button variant="primary" class="md:w-full"> add to cart </Button>
         </div>
 
         <div class="flex items-center justify-between">
@@ -74,7 +74,7 @@
 <script setup lang="ts">
 import ColorCustomDropdown from '@/components/elements/CustomDropdown/ColorCustomDropdown.vue'
 import SizeCustomDropdown from '@/components/elements/CustomDropdown/SizeCustomDropdown.vue'
-import Button from '@/components/ui/button/Button.vue'
+import { Button } from '@/components/ui/button'
 import type { ColorProductInterface, ProductInterface } from '@/lib/interfaces/product'
 import { Heart, Minus, Plus } from 'lucide-vue-next'
 import { ref } from 'vue'

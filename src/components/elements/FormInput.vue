@@ -2,7 +2,13 @@
   <div class="flex flex-col">
     <label v-show="label" :class="labelClass">{{ label }}</label>
 
-    <Input v-model="inputValue" v-bind="$attrs" :placeholder="placeholder" />
+    <Input
+      v-model="inputValue"
+      v-bind="$attrs"
+      :placeholder="placeholder"
+      :required="required"
+      :type="type"
+    />
   </div>
 </template>
 
@@ -15,6 +21,27 @@ const props = defineProps<{
   labelClass?: string
   value?: string
   placeholder?: string
+  required?: boolean
+  type?:
+    | 'color'
+    | 'date'
+    | 'datetime-local'
+    | 'email'
+    | 'file'
+    | 'hidden'
+    | 'image'
+    | 'month'
+    | 'number'
+    | 'password'
+    | 'range'
+    | 'reset'
+    | 'search'
+    | 'submit'
+    | 'tel'
+    | 'text'
+    | 'time'
+    | 'url'
+    | 'week'
 }>()
 
 const inputValue = ref(props.value || '')

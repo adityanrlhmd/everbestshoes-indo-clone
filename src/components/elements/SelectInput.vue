@@ -2,9 +2,9 @@
   <div class="flex flex-col">
     <label v-show="label" :class="labelClass">{{ label }}</label>
 
-    <Select>
+    <Select v-model="selectValue" :required="required" :disabled="disabled" @update:modelValue="updateSelectValue">
       <SelectTrigger>
-        <SelectValue v-model="selectValue" :placeholder="placeholder"  />
+        <SelectValue :placeholder="placeholder" />
       </SelectTrigger>
 
       <SelectContent>
@@ -28,7 +28,7 @@ import {
   SelectValue
 } from '@/components/ui/select'
 
-import { ref } from 'vue'
+import { ref, defineProps, defineEmits } from 'vue'
 
 type Option = {
   label: string
@@ -40,20 +40,17 @@ const props = defineProps<{
   labelClass?: string
   placeholder?: string
   value?: string
+  required?: boolean
+  disabled?: boolean
   options: Option[]
 }>()
 
+const emit = defineEmits(['update:modelValue'])
+
 const selectValue = ref(props.value || '')
-</script>
 
-<script lang="ts">
-export default {
-  inheritAttrs: false
+function updateSelectValue(value: string) {
+  selectValue.value = value
+  emit('update:modelValue', value)
 }
 </script>
-
-<style scoped lang="postcss">
-label {
-  @apply mb-1 text-sm;
-}
-</style>

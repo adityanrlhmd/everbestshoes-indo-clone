@@ -23,6 +23,8 @@ module.exports = {
         tertiary: '#F8DD37',
         quaternary: '#638043',
         quinary: '#273632',
+        destructive: "#ef4343",
+        'destructive-foreground': "#f9fafb",
         muted: '#f3f4f6',
         'muted-foreground': '#6b7280',
         accent: '#f3f4f6',

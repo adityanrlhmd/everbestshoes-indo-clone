@@ -17,7 +17,7 @@ const props = withDefaults(
     v-bind="props"
     :class="
       cn(
-        'flex h-10 w-full items-center justify-between border outline-none border-neutral-200 bg-white px-3 py-2 text-sm placeholder:text-neutral-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-400',
+        'flex gap-2 h-10 w-full items-center justify-between border outline-none border-neutral-200 bg-white px-3 py-2 text-sm placeholder:text-neutral-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-400',
         props.class,
         props.invalid ? '!ring-quarternary ring-2 placeholder:!text-quarternary' : ''
       )

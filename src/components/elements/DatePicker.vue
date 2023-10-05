@@ -1,35 +1,33 @@
 <template>
-  <div>
-    <Popover v-model:modelValue="selectedDate">
-      <PopoverTrigger as-child>
-        <div class="flex flex-col">
-          <label v-show="label" :class="labelClass">{{ label }}</label>
-          <div
-            :class="
-              cn(
-                'flex items-center justify-start h-10 w-full border hover:bg-transparent hover:text-black border-neutral-200 px-3 py-2 text-sm disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-800 dark:placeholder:text-neutral-400',
-                !selectedDate && 'text-muted-foreground'
-              )
-            "
-          >
-            <CalendarIcon :stroke-width="1.5" class="w-4 h-4 mr-2" />
+  <Popover v-model:modelValue="selectedDate">
+    <PopoverTrigger as-child>
+      <div class="flex flex-col">
+        <label v-show="label" :class="labelClass">{{ label }}</label>
+        <div
+          :class="
+            cn(
+              'flex items-center justify-start h-10 w-full border hover:bg-transparent hover:text-black border-neutral-200 px-3 py-2 text-sm disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-800 dark:placeholder:text-neutral-400',
+              !selectedDate && 'text-muted-foreground'
+            )
+          "
+        >
+          <CalendarIcon :stroke-width="1.5" class="w-4 h-4 mr-2" />
 
-            <input
-              type="text"
-              @keydown="onKeyDownInput"
-              class="w-full outline-none caret-transparent"
-              v-bind="$attrs"
-              :value="selectedDate ? format(selectedDate, 'PPP') : ''"
-              :placeholder="placeholder"
-            />
-          </div>
+          <input
+            type="text"
+            @keydown="onKeyDownInput"
+            class="w-full outline-none caret-transparent"
+            v-bind="$attrs"
+            :value="selectedDate ? format(selectedDate, 'PPP') : ''"
+            :placeholder="placeholder"
+          />
         </div>
-      </PopoverTrigger>
-      <PopoverContent class="w-auto p-0">
-        <Calendar v-model="modelValue" />
-      </PopoverContent>
-    </Popover>
-  </div>
+      </div>
+    </PopoverTrigger>
+    <PopoverContent class="w-auto p-0">
+      <Calendar v-model="modelValue" />
+    </PopoverContent>
+  </Popover>
 </template>
 
 <script setup lang="ts">
