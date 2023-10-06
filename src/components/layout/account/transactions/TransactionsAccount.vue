@@ -1,0 +1,46 @@
+<template>
+  <div class="flex flex-col w-full gap-5 item-start">
+    <h1 class="text-4xl font-bold uppercase">MY transactions</h1>
+
+    <Table>
+      <TableCaption>A list of your recent transactions.</TableCaption>
+
+      <TableHeader>
+        <TableRow>
+          <TableHead> Receipt# </TableHead>
+          <TableHead>Date</TableHead>
+          <TableHead>Location</TableHead>
+          <TableHead> Type </TableHead>
+          <TableHead> Status </TableHead>
+        </TableRow>
+      </TableHeader>
+
+      <TableBody>
+        <TableRow>
+          <TableCell class="font-medium"> INV001 </TableCell>
+          <TableCell>Paid</TableCell>
+          <TableCell>Credit Card</TableCell>
+          <TableCell> $250.00 </TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+
+    <div class="flex items-center ml-auto">
+      <Button variant="outline" size="sm" class="text-xs w-fit"> Previous </Button>
+      <Button variant="outline" size="sm" class="text-xs w-fit"> Next </Button>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { Button } from '@/components/ui/button'
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow
+} from '@/components/ui/table'
+</script>

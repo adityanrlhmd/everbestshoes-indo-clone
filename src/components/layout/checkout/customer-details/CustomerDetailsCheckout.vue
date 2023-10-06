@@ -1,6 +1,6 @@
 <template>
   <section class="flex flex-col gap-8 text-sm">
-    <h2 class="!text-left heading">Customer Details</h2>
+    <h2 class="text-xl font-bold">Customer Details</h2>
 
     <div class="flex flex-col gap-2">
       <FormInput label="Given Name *" name="givenName" required />

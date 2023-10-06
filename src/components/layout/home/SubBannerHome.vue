@@ -8,7 +8,7 @@
       </p>
 
       <Button variant="primary">
-        <RouterLink to="/women"> SHOP NOW </RouterLink>
+        <RouterLink to="products/category/women"> SHOP NOW </RouterLink>
       </Button>
     </div>
 
@@ -42,7 +42,7 @@ const articleSubBanner: SubBannerHomeInterface[] = [
       name: 'Women',
       src: 'https://id-everbestshoes-cdn.ascentismedia.com//SharedImages/ContentImages/c9898ebf-504c-46cf-8b7c-7f4e36ac1d6e/20231002160309304858_06717420-75b3-4556-8c76-75ce457fd68a.png'
     },
-    link: '/',
+    link: '/products/category/women',
     textCTA: 'Shop Women'
   },
   {
@@ -50,7 +50,7 @@ const articleSubBanner: SubBannerHomeInterface[] = [
       name: 'Men',
       src: 'https://id-everbestshoes-cdn.ascentismedia.com//SharedImages/ContentImages/557b2368-d00f-4afa-a1fa-4cbb216d47b5/20231002160246462667_a0eb96ea-be5b-4ada-9dc3-a59eebeb3562.png'
     },
-    link: '/',
+    link: '/products/category/men',
     textCTA: 'Shop Men'
   }
 ]

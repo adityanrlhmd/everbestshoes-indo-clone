@@ -52,7 +52,7 @@ import { TableCell, TableRow } from '@/components/ui/table'
 import type { ProductInterface } from '@/lib/interfaces/product'
 import { BadgePercent } from 'lucide-vue-next'
 import { Trash2 } from 'lucide-vue-next'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 
 const props = defineProps<{
   product: ProductInterface
@@ -60,8 +60,13 @@ const props = defineProps<{
 
 const quantity = ref<string>('1')
 
-const priceProduct = props.product.discountPercent
-  ? props.product.price * (props.product.discountPercent / 100)
-  : props.product.price
-const total = priceProduct * parseInt(quantity.value)
+const priceProduct = computed(() => {
+  if (props.product.discountPercent) {
+    return props.product.price * (props.product.discountPercent / 100)
+  } else {
+    return props.product.price
+  }
+})
+
+const total = computed(() => priceProduct.value * parseInt(quantity.value))
 </script>
